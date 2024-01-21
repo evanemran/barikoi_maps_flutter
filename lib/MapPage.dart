@@ -3,7 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:maplibre_gl/maplibre_gl.dart';
 
 class MapPage extends StatefulWidget {
-  const MapPage({super.key});
+  const MapPage({super.key, required this.onLocationPicked});
+
+  final Function(PickResult location) onLocationPicked;
 
   @override
   State<MapPage> createState() => _MapPageState();
@@ -45,7 +47,9 @@ class _MapPageState extends State<MapPage> {
       //option to retrive addtional place data, will count extra api calls
       onPlacePicked: (result) {
         //returns the place object selected in the place picker
+        widget.onLocationPicked(result);
         print(result);
+        Navigator.pop(context);
       },
     );
   }

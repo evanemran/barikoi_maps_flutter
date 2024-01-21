@@ -1,6 +1,8 @@
 import 'package:barikoi_maps_flutter/MapPage.dart';
 import 'package:flutter/material.dart';
 
+import 'HomePage.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MapPage(),
+      home: const HomePage(),
     );
   }
 }
